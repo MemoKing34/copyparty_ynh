@@ -46,6 +46,9 @@ ynh_script_progression "Adding system configurations related to $app..."
 # Add copyparty to www-data group
 usermod -aG www-data copyparty
 
+# Add www-data to copyparty group
+usermod -aG copyparty www-data
+
 # Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 

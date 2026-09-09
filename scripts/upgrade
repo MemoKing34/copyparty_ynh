@@ -49,6 +49,9 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 # Readd copyparty to www-data group
 usermod -aG www-data copyparty
 
+# Readd www-data to copyparty group
+usermod -aG copyparty www-data
+
 ynh_config_add_nginx
 
 ynh_config_add_systemd

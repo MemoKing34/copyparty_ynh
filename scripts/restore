@@ -42,6 +42,9 @@ ynh_script_progression "Restoring system configurations related to $app..."
 # Add copyparty to www-data group
 usermod -aG www-data copyparty
 
+# Add www-data to copyparty group
+usermod -aG copyparty www-data
+
 ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 ynh_restore "/etc/systemd/system/$app.service"
