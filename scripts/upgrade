@@ -46,6 +46,10 @@ ynh_config_add --template="main.config" --destination="$install_dir/config/main.
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
+# Readd both copyparty and www-data user to party-sock group
+usermod -aG party-sock copyparty
+usermod -aG party-sock www-data
+
 ynh_config_add_nginx
 
 ynh_config_add_systemd
