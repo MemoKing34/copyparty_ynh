@@ -39,12 +39,8 @@ ynh_script_progression "Installing Python dependencies..."
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
 
-# First create a dedicated group for unix-socket access
-groupadd --system --force party-sock
-
-# Then add both copyparty and www-data user to that group
-usermod -aG party-sock copyparty
-usermod -aG party-sock www-data
+# Add copyparty to www-data group
+usermod -aG www-data copyparty
 
 ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
