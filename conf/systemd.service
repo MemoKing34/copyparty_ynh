@@ -6,6 +6,8 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
+RuntimeDirectory=__APP__
+RuntimeDirectoryMode=0770
 Environment=XDG_CONFIG_HOME=__INSTALL_DIR__/config
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/venv/bin/python __INSTALL_DIR__/copyparty-sfx.py -e2dsa -c __INSTALL_DIR__/config/main.config
