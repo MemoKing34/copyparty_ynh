@@ -46,11 +46,8 @@ ynh_config_add --template="main.config" --destination="$install_dir/config/main.
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
-# Readd copyparty to www-data group
-usermod -aG www-data copyparty
-
 # Readd www-data to copyparty group
-usermod -aG copyparty www-data
+usermod -aG $app www-data
 
 ynh_config_add_nginx
 

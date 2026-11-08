@@ -39,11 +39,8 @@ ynh_script_progression "Installing Python dependencies..."
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
 
-# Add copyparty to www-data group
-usermod -aG www-data copyparty
-
 # Add www-data to copyparty group
-usermod -aG copyparty www-data
+usermod -aG $app www-data
 
 ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
